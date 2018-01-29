@@ -15,7 +15,7 @@ class CreateImagesTable extends Migration
     {
         Schema::create('images', function (Blueprint $table) {
             $table->increments('imageId');
-            $table->string('content');
+            $table->string('url');
             $table->integer('taskId')->unsigned();
             $table->timestamp('createdAt')->useCurrent();
             $table->timestamp('updatedAt')->useCurrent();

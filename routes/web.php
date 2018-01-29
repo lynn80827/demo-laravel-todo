@@ -1,6 +1,8 @@
 <?php
 
 use App\Models\Task;
+use App\Models\Image;
+use Aws\S3\S3Client;
 use Illuminate\Http\Request;
 
 /*
@@ -47,7 +49,72 @@ Route::post('/task', function (Request $request) {
  * Delete An Existing Task
  */
 Route::delete('/task/{taskId}', function ($taskId) {
-    Task::findOrFail($taskId)->delete();
+    $task = Task::findOrFail($taskId);
+    $images = $task->images;
+    $files = [];
+    foreach ($images as $image) {
+        $files[] = ['Key' => pathinfo($image->url)['basename']];
+    }
+    if (!empty($files)) {
+        $s3 = S3Client::factory([
+            'region' => 'us-west-2',
+            'version' => '2006-03-01',
+        ]);
+        $s3->deleteObjects([
+            'Bucket' => env('IMAGE_S3_BUCKET'),
+            'Delete' => [
+                'Objects' => $files,
+            ],
+        ]);
+        $task->images()->delete();
+    }
+    $task->delete();
 
+    return redirect('/');
+});
+
+
+Route::post('/image', function (Request $request) {
+    $validator = Validator::make($request->all(), [
+        'image' => 'required',
+        'taskId' => 'required|integer|min:1'
+    ]);
+
+    if ($validator->fails()) {
+        return redirect('/')
+            ->withInput()
+            ->withErrors($validator);
+    }
+    $file = $request->file('image');
+    $s3 = S3Client::factory([
+        'region' => 'us-west-2',
+        'version' => '2006-03-01',
+    ]);
+    $result = $s3->putObject([
+        'Bucket' => env('IMAGE_S3_BUCKET'),
+        'Key' => sprintf('%s.%s', time(), $file->extension()),
+        'SourceFile' => $file,
+        'ACL' => 'public-read',
+    ]);
+
+    $image = new Image;
+    $image->taskId = $request->get('taskId');
+    $image->url = $result['ObjectURL'];
+    $image->save();
+
+    return redirect('/');
+});
+
+Route::delete('/image/{imageId}', function ($imageId, Request $request) {
+    $image = Image::findOrFail($imageId);
+    $s3 = S3Client::factory([
+        'region' => 'us-west-2',
+        'version' => '2006-03-01',
+    ]);
+    $s3->deleteObject([
+        'Bucket' => env('IMAGE_S3_BUCKET'),
+        'Key' => pathinfo($image->url)['basename'],
+    ]);
+    $image->delete();
     return redirect('/');
 });

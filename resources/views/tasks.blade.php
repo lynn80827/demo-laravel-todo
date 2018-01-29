@@ -53,6 +53,15 @@
                                 @foreach ($tasks as $task)
                                     <tr>
                                         <td class="table-text"><div>{{ $task->content }}</div></td>
+                                        <!-- Upload File Button -->
+                                        <td>
+                                            <form action="{{ url('/image') }}" method="POST">
+
+                                                <button type="submit" class="btn btn-danger">
+                                                    <i class="fa fa-btn fa-upload"></i>Upload File
+                                                </button>
+                                            </form>
+                                        </td>
                                         <!-- Task Delete Button -->
                                         <td>
                                             <form action="{{ url('task/'.$task->taskId) }}" method="POST">
@@ -63,6 +72,11 @@
                                                 </button>
                                             </form>
                                         </td>
+                                    </tr>
+                                    <tr>
+                                     @foreach ($task->images as $image)
+                                         <td><img src="{{ $image->url }}" alt="" width="100"></td>
+                                     @endforeach
                                     </tr>
                                 @endforeach
                             </tbody>
