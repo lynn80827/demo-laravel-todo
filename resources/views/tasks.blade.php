@@ -55,8 +55,9 @@
                                         <td class="table-text"><div>{{ $task->content }}</div></td>
                                         <!-- Upload File Button -->
                                         <td>
-                                            <form action="{{ url('/image') }}" method="POST">
-
+                                            <form action="{{ url('/image') }}" method="POST" enctype="multipart/form-data">
+                                                <input name="image" type="file">
+                                                <input name="taskId" type="text" class="hidden" value="{{$task->taskId}}">
                                                 <button type="submit" class="btn btn-danger">
                                                     <i class="fa fa-btn fa-upload"></i>Upload File
                                                 </button>
@@ -75,7 +76,13 @@
                                     </tr>
                                     <tr>
                                      @foreach ($task->images as $image)
-                                         <td><img src="{{ $image->url }}" alt="" width="100"></td>
+                                         <td>
+                                            <form action="{{ url('image/'.$image->imageId) }}" method="POST">
+                                                {{ method_field('DELETE') }}
+                                                <img src="{{ $image->url }}" alt="" width="100">
+                                                <button type="submit" class="btn btn-danger">X</button>
+                                            </form>
+                                         </td>
                                      @endforeach
                                     </tr>
                                 @endforeach
