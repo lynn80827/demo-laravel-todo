@@ -38,7 +38,7 @@ Route::post('/task', function (Request $request) {
     ]);
 
     if ($validator->fails()) {
-        return redirect('/')
+        return redirect()->away('/')
             ->withInput()
             ->withErrors($validator);
     }
@@ -47,7 +47,7 @@ Route::post('/task', function (Request $request) {
     $task->content = $request->content;
     $task->save();
 
-    return redirect('/');
+    return redirect()->away('/');
 });
 
 /**
@@ -75,7 +75,7 @@ Route::delete('/task/{taskId}', function ($taskId) {
     }
     $task->delete();
 
-    return redirect('/');
+    return redirect()->away('/');
 });
 
 
@@ -86,7 +86,7 @@ Route::post('/image', function (Request $request) {
     ]);
 
     if ($validator->fails()) {
-        return redirect('/')
+        return redirect()->away('/')
             ->withInput()
             ->withErrors($validator);
     }
@@ -108,7 +108,7 @@ Route::post('/image', function (Request $request) {
     $image->url = $fileName;
     $image->save();
 
-    return redirect('/');
+    return redirect()->away('/');
 });
 
 Route::delete('/image/{imageId}', function ($imageId, Request $request) {
@@ -122,5 +122,6 @@ Route::delete('/image/{imageId}', function ($imageId, Request $request) {
         'Key' => pathinfo($image->url)['basename'],
     ]);
     $image->delete();
-    return redirect('/');
+
+    return redirect()->away('/');
 });

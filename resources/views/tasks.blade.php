@@ -13,7 +13,7 @@
                     @include('common.errors')
 
                     <!-- New Task Form -->
-                    <form action="{{ url('task')}}" method="POST" class="form-horizontal">
+                    <form action="task" method="POST" class="form-horizontal">
 
                         <!-- Task Name -->
                         <div class="form-group">
@@ -55,7 +55,7 @@
                                         <td class="table-text"><div>{{ $task->content }}</div></td>
                                         <!-- Upload File Button -->
                                         <td>
-                                            <form action="{{ url('/image') }}" method="POST" enctype="multipart/form-data">
+                                            <form action="image" method="POST" enctype="multipart/form-data">
                                                 <input name="image" type="file">
                                                 <input name="taskId" type="text" class="hidden" value="{{$task->taskId}}">
                                                 <button type="submit" class="btn btn-danger">
@@ -65,7 +65,7 @@
                                         </td>
                                         <!-- Task Delete Button -->
                                         <td>
-                                            <form action="{{ url('task/'.$task->taskId) }}" method="POST">
+                                            <form action="{{ 'task/'.$task->taskId }}" method="POST">
                                                 {{ method_field('DELETE') }}
 
                                                 <button type="submit" class="btn btn-danger">
@@ -77,7 +77,7 @@
                                     <tr>
                                      @foreach ($task->images as $image)
                                          <td>
-                                            <form action="{{ url('image/'.$image->imageId) }}" method="POST">
+                                            <form action="{{ 'image/'.$image->imageId }}" method="POST">
                                                 {{ method_field('DELETE') }}
                                                 <img src="{{ $image->url }}" alt="" width="100">
                                                 <button type="submit" class="btn btn-danger">X</button>
