@@ -17,7 +17,12 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/', function () {
-    $tasks = Task::with('images')->orderBy('createdAt', 'asc')->get();
+    $tasks = Task::with('images')->orderBy('createdAt', 'asc')->get()->map(function ($task) {
+        foreach ($task->images as $image) {
+            $image->url = sprintf('https://%s/%s', env('IMAGE_DOMAIN'), $image->url);
+        }
+        return $task;
+    });
 
     return view('tasks', [
         'tasks' => $tasks
@@ -90,16 +95,17 @@ Route::post('/image', function (Request $request) {
         'region' => 'us-west-2',
         'version' => '2006-03-01',
     ]);
+    $fileName = sprintf('%s.%s', time(), $file->extension());
     $result = $s3->putObject([
         'Bucket' => env('IMAGE_S3_BUCKET'),
-        'Key' => sprintf('%s.%s', time(), $file->extension()),
+        'Key' => $fileName,
         'SourceFile' => $file,
         'ACL' => 'public-read',
     ]);
 
     $image = new Image;
     $image->taskId = $request->get('taskId');
-    $image->url = $result['ObjectURL'];
+    $image->url = $fileName;
     $image->save();
 
     return redirect('/');
