@@ -19,7 +19,7 @@ use Illuminate\Http\Request;
 Route::get('/', function () {
     $tasks = Task::with('images')->orderBy('createdAt', 'asc')->get()->map(function ($task) {
         foreach ($task->images as $image) {
-            $image->url = sprintf('https://%s/%s', env('IMAGE_DOMAIN'), $image->url);
+            $image->url = sprintf('https://%s/%s', config('image.host'), $image->url);
         }
         return $task;
     });
@@ -66,7 +66,7 @@ Route::delete('/task/{taskId}', function ($taskId) {
             'version' => '2006-03-01',
         ]);
         $s3->deleteObjects([
-            'Bucket' => env('IMAGE_S3_BUCKET'),
+            'Bucket' => config('image.bucket'),
             'Delete' => [
                 'Objects' => $files,
             ],
@@ -97,7 +97,7 @@ Route::post('/image', function (Request $request) {
     ]);
     $fileName = sprintf('%s.%s', time(), $file->extension());
     $result = $s3->putObject([
-        'Bucket' => env('IMAGE_S3_BUCKET'),
+        'Bucket' => config('image.bucket'),
         'Key' => $fileName,
         'SourceFile' => $file,
         'ACL' => 'public-read',
@@ -118,7 +118,7 @@ Route::delete('/image/{imageId}', function ($imageId, Request $request) {
         'version' => '2006-03-01',
     ]);
     $s3->deleteObject([
-        'Bucket' => env('IMAGE_S3_BUCKET'),
+        'Bucket' => config('image.bucket'),
         'Key' => pathinfo($image->url)['basename'],
     ]);
     $image->delete();
