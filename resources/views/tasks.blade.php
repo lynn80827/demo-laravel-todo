@@ -43,7 +43,7 @@
                         Current Tasks
                     </div>
 
-                    <div class="panel-body">
+                    <div class="panel-body table-responsive">
                         <table class="table table-striped task-table">
                             <thead>
                                 <th>Task</th>
@@ -54,15 +54,16 @@
                                     <tr>
                                         <td class="table-text"><div>{{ $task->content }}</div></td>
                                         <!-- Upload File Button -->
-                                        <td>
-                                            <form action="image" method="POST" enctype="multipart/form-data">
+                                        <form action="image" method="POST" enctype="multipart/form-data">
+                                            <td>
                                                 <input name="image" type="file">
                                                 <input name="taskId" type="text" class="hidden" value="{{$task->taskId}}">
+                                            </td>
+                                            <td>
                                                 <button type="submit" class="btn btn-danger">
-                                                    <i class="fa fa-btn fa-upload"></i>Upload File
+                                                    <i class="fa fa-btn fa-upload"></i>Upload
                                                 </button>
-                                            </form>
-                                        </td>
+                                            </td>
                                         <!-- Task Delete Button -->
                                         <td>
                                             <form action="{{ 'task/'.$task->taskId }}" method="POST">
@@ -73,6 +74,7 @@
                                                 </button>
                                             </form>
                                         </td>
+                                        </form>
                                     </tr>
                                     <tr>
                                      @foreach ($task->images as $image)
