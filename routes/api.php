@@ -17,7 +17,7 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/tasks', function () {
-    $tasks = Task::with('images')->orderBy('createdAt', 'asc')->get();
+    $tasks = Task::with('images')->orderBy('taskId', 'desc')->get();
 
     return response()->json([
         'status' => 200,

@@ -8,6 +8,6 @@ class Task extends Model
 
     public function images()
     {
-        return $this->hasMany(Image::class, 'taskId', 'taskId');
+        return $this->hasMany(Image::class, 'taskId', 'taskId')->orderBy('imageId', 'desc');
     }
 }
