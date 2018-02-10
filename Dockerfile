@@ -1,3 +1,11 @@
+FROM node:9.5.0-slim AS builder
+WORKDIR /app
+COPY f2e/yarn.lock .
+COPY f2e/package.json .
+RUN yarn install --pure-lockfile
+COPY f2e .
+RUN yarn run build
+
 FROM ubuntu
 RUN apt-get -y update; apt-get -y install curl nginx php7.0 php7.0-fpm php7.0-mysql php7.0-sqlite3 php7.0-mbstring php-xml php7.0-zip
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
@@ -7,6 +15,7 @@ ENV APP_DEBUG=true
 ENV APP_LOG_LEVEL=debug
 WORKDIR /home
 COPY . ./laravel
+COPY --from=builder /app/build ./laravel/public
 WORKDIR laravel
 RUN composer install
 RUN chown -R www-data:www-data /home/laravel
