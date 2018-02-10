@@ -1,0 +1,93 @@
+{
+  "name": "f2e",
+  "version": "0.1.0",
+  "private": true,
+  "proxy": {
+    "/api": {
+      "target": "http://localhost:8089"
+    }
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eslint": "eslint ./",
+    "flow": "flow",
+    "format": "prettier --write 'src/**/*.js' '.storybook/*.js' '*.{json,md}'"
+  },
+  "prettier": {
+    "trailingComma": "all",
+    "singleQuote": true
+  },
+  "lint-staged": {
+    "*.{js,json,md}": ["prettier --write", "git add"]
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "extends": [
+      "airbnb",
+      "plugin:flowtype/recommended",
+      "plugin:jest/recommended",
+      "prettier",
+      "prettier/react",
+      "prettier/flowtype"
+    ],
+    "plugins": ["prettier", "jest", "flowtype"],
+    "env": {
+      "jest/globals": true
+    },
+    "rules": {
+      "prettier/prettier": "error",
+      "react/jsx-filename-extension": [
+        1,
+        {
+          "extensions": [".js"]
+        }
+      ],
+      "import/no-extraneous-dependencies": 0,
+      "jsx-a11y/no-static-element-interactions": 0,
+      "react/forbid-prop-types": 0,
+      "react/require-default-props": 0
+    }
+  },
+  "eslintIgnore": ["node_modules", "coverage", "lib", "flow-typed"],
+  "browserslist": {
+    "development": [
+      "last 2 chrome versions",
+      "last 2 firefox versions",
+      "last 2 edge versions"
+    ],
+    "production": [">1%", "last 4 versions", "Firefox ESR", "not ie < 11"]
+  },
+  "dependencies": {
+    "material-ui": "^1.0.0-beta.32",
+    "material-ui-icons": "^1.0.0-beta.17",
+    "polished": "^1.9.2",
+    "ramda": "^0.25.0",
+    "randomcolor": "^0.5.3",
+    "rc-queue-anim": "^1.4.1",
+    "rc-tween-one": "^1.7.3",
+    "react": "^16.2.0",
+    "react-dnd-dropzone": "^1.0.0",
+    "react-dom": "^16.2.0",
+    "react-input-files": "^1.0.0",
+    "react-medium-image-zoom": "^3.0.10",
+    "react-scripts": "next",
+    "react-topbar-progress-indicator": "^2.0.0",
+    "styled-components": "^3.1.6"
+  },
+  "devDependencies": {
+    "babel-eslint": "8.2.1",
+    "eslint": "4.15.0",
+    "eslint-config-airbnb": "16.1.0",
+    "eslint-config-prettier": "2.9.0",
+    "eslint-plugin-flowtype": "2.43.0",
+    "eslint-plugin-import": "2.8.0",
+    "eslint-plugin-jest": "21.8.0",
+    "eslint-plugin-jsx-a11y": "6.0.3",
+    "eslint-plugin-prettier": "2.6.0",
+    "eslint-plugin-react": "7.6.1",
+    "flow-bin": "^0.65.0",
+    "prettier": "^1.10.2"
+  }
+}
