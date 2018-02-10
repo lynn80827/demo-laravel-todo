@@ -17,12 +17,7 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/tasks', function () {
-    $tasks = Task::with('images')->orderBy('createdAt', 'asc')->get()->map(function ($task) {
-        foreach ($task->images as $image) {
-            $image->url = sprintf('https://%s/%s', config('image.host'), $image->url);
-        }
-        return $task;
-    });
+    $tasks = Task::with('images')->orderBy('createdAt', 'asc')->get();
 
     return response()->json([
         'status' => 200,
@@ -123,6 +118,7 @@ Route::post('/image', function (Request $request) {
         'status' => 200,
         'data' => [
             'imageId' => $image->imageId,
+            'url' => $image->url,
         ],
     ]);
 });
