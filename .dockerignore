@@ -16,4 +16,5 @@ yarn-error.log
 .env
 
 # f2e
-f2e
+f2e/node_modules
+f2e/build
