@@ -50,7 +50,7 @@
       "react/require-default-props": 0
     }
   },
-  "eslintIgnore": ["node_modules", "coverage", "lib", "flow-typed"],
+  "eslintIgnore": ["node_modules", "coverage", "build", "flow-typed"],
   "browserslist": {
     "development": [
       "last 2 chrome versions",
@@ -72,8 +72,10 @@
     "react-dom": "^16.2.0",
     "react-input-files": "^1.0.0",
     "react-medium-image-zoom": "^3.0.10",
+    "react-portal": "^4.1.2",
     "react-scripts": "next",
     "react-topbar-progress-indicator": "^2.0.0",
+    "recompose": "^0.26.0",
     "styled-components": "^3.1.6"
   },
   "devDependencies": {
