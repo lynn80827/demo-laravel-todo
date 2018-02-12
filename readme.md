@@ -18,5 +18,5 @@ $ cd f2e
 $ yarn install
 $ yarn start
 
-$ yarn run format & yarn run eslint && yarn run flow
+$ yarn run format & yarn run eslint && yarn run flow && yarn run test
 ```

@@ -15,7 +15,7 @@ import AddButton from './components/AddButton';
 import CreateFormDialog from './components/CreateFormDialog';
 import * as API from './utils/API';
 
-class PureApp extends React.Component<
+export class PureApp extends React.Component<
   WithTopBarProgressdProps & WithTasksProps & WithDialogStateProps,
 > {
   async componentDidMount() {

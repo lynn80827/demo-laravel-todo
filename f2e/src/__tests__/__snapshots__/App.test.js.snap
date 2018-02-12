@@ -1,0 +1,842 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render <App> correctly 1`] = `
+<withTopBarProgress(withReducer(withStateHandlers(PureApp)))>
+  <withReducer(withStateHandlers(PureApp))
+    setLoading={[Function]}
+  >
+    <withStateHandlers(PureApp)
+      setLoading={[Function]}
+      setTasks={[Function]}
+      tasks={Array []}
+    >
+      <PureApp
+        closeDialog={[Function]}
+        isDialogOpen={false}
+        openDialog={[Function]}
+        setLoading={[Function]}
+        setTasks={[Function]}
+        tasks={Array []}
+      >
+        <Header>
+          <mock-material-ui-AppBar
+            position="sticky"
+          >
+            <mock-material-ui-Toolbar>
+              Task Management
+            </mock-material-ui-Toolbar>
+          </mock-material-ui-AppBar>
+        </Header>
+        <TaskList
+          onDelete={[Function]}
+          onImageChange={[Function]}
+          onImageDelete={[Function]}
+          tasks={Array []}
+        >
+          <mock-rc-queue-anim
+            style={
+              Object {
+                "padding": 16,
+              }
+            }
+          />
+        </TaskList>
+        <AddButton
+          onClick={[Function]}
+        >
+          <mock-material-ui-Button
+            color="secondary"
+            onClick={[Function]}
+            style={
+              Object {
+                "bottom": 24,
+                "position": "fixed",
+                "right": 24,
+              }
+            }
+            variant="fab"
+          >
+            <mock-material-ui-icons-Add />
+          </mock-material-ui-Button>
+        </AddButton>
+        <CreateFormDialog
+          isOpen={false}
+          onClose={[Function]}
+          onSubmit={[Function]}
+        >
+          <WithStyles(Dialog)
+            aria-labelledby="form-dialog-title"
+            onClose={[Function]}
+            onKeyPress={[Function]}
+            open={false}
+          >
+            <Dialog
+              aria-labelledby="form-dialog-title"
+              classes={
+                Object {
+                  "fullScreen": "MuiDialog-fullScreen-7",
+                  "fullWidth": "MuiDialog-fullWidth-6",
+                  "paper": "MuiDialog-paper-2",
+                  "paperWidthMd": "MuiDialog-paperWidthMd-5",
+                  "paperWidthSm": "MuiDialog-paperWidthSm-4",
+                  "paperWidthXs": "MuiDialog-paperWidthXs-3",
+                  "root": "MuiDialog-root-1",
+                }
+              }
+              disableBackdropClick={false}
+              disableEscapeKeyDown={false}
+              fullScreen={false}
+              fullWidth={false}
+              maxWidth="sm"
+              onClose={[Function]}
+              onKeyPress={[Function]}
+              open={false}
+              transition={[Function]}
+              transitionDuration={
+                Object {
+                  "enter": 225,
+                  "exit": 195,
+                }
+              }
+            >
+              <WithStyles(Modal)
+                BackdropProps={
+                  Object {
+                    "transitionDuration": Object {
+                      "enter": 225,
+                      "exit": 195,
+                    },
+                  }
+                }
+                aria-labelledby="form-dialog-title"
+                className="MuiDialog-root-1"
+                disableBackdropClick={false}
+                disableEscapeKeyDown={false}
+                onClose={[Function]}
+                onKeyPress={[Function]}
+                open={false}
+                role="dialog"
+              >
+                <Modal
+                  BackdropComponent={[Function]}
+                  BackdropProps={
+                    Object {
+                      "transitionDuration": Object {
+                        "enter": 225,
+                        "exit": 195,
+                      },
+                    }
+                  }
+                  aria-labelledby="form-dialog-title"
+                  className="MuiDialog-root-1"
+                  classes={
+                    Object {
+                      "hidden": "MuiModal-hidden-9",
+                      "root": "MuiModal-root-8",
+                    }
+                  }
+                  disableAutoFocus={false}
+                  disableBackdropClick={false}
+                  disableEnforceFocus={false}
+                  disableEscapeKeyDown={false}
+                  disableRestoreFocus={false}
+                  hideBackdrop={false}
+                  keepMounted={false}
+                  manager={
+                    ModalManager {
+                      "add": [Function],
+                      "containers": Array [],
+                      "data": Array [],
+                      "handleContainerOverflow": true,
+                      "hideSiblingNodes": true,
+                      "isTopModal": [Function],
+                      "modals": Array [],
+                      "remove": [Function],
+                    }
+                  }
+                  onClose={[Function]}
+                  onKeyPress={[Function]}
+                  open={false}
+                  role="dialog"
+                />
+              </WithStyles(Modal)>
+            </Dialog>
+          </WithStyles(Dialog)>
+        </CreateFormDialog>
+      </PureApp>
+    </withStateHandlers(PureApp)>
+  </withReducer(withStateHandlers(PureApp))>
+  <Portal>
+    <TopBar />
+  </Portal>
+</withTopBarProgress(withReducer(withStateHandlers(PureApp)))>
+`;
+
+exports[`should render <PureApp> with tasks 1`] = `
+<PureApp
+  closeDialog={[Function]}
+  isDialogOpen={false}
+  openDialog={[Function]}
+  setLoading={[Function]}
+  setTasks={[Function]}
+  tasks={
+    Array [
+      Object {
+        "content": "content",
+        "createdAt": 123,
+        "images": Array [
+          Object {
+            "imageId": 1,
+            "url": "image/url/1",
+          },
+        ],
+        "taskId": 1,
+      },
+    ]
+  }
+>
+  <Header>
+    <mock-material-ui-AppBar
+      position="sticky"
+    >
+      <mock-material-ui-Toolbar>
+        Task Management
+      </mock-material-ui-Toolbar>
+    </mock-material-ui-AppBar>
+  </Header>
+  <TaskList
+    onDelete={[Function]}
+    onImageChange={[Function]}
+    onImageDelete={[Function]}
+    tasks={
+      Array [
+        Object {
+          "content": "content",
+          "createdAt": 123,
+          "images": Array [
+            Object {
+              "imageId": 1,
+              "url": "image/url/1",
+            },
+          ],
+          "taskId": 1,
+        },
+      ]
+    }
+  >
+    <mock-rc-queue-anim
+      style={
+        Object {
+          "padding": 16,
+        }
+      }
+    >
+      <TaskItem
+        key="1"
+        onDelete={[Function]}
+        onImageChange={[Function]}
+        onImageDelete={[Function]}
+        style={
+          Object {
+            "marginTop": 12,
+          }
+        }
+        task={
+          Object {
+            "content": "content",
+            "createdAt": 123,
+            "images": Array [
+              Object {
+                "imageId": 1,
+                "url": "image/url/1",
+              },
+            ],
+            "taskId": 1,
+          }
+        }
+      >
+        <Card
+          raised={false}
+          style={
+            Object {
+              "marginTop": 12,
+            }
+          }
+        >
+          <WithStyles(Paper)
+            elevation={2}
+            style={
+              Object {
+                "marginTop": 12,
+              }
+            }
+          >
+            <Paper
+              classes={
+                Object {
+                  "root": "MuiPaper-root-10",
+                  "rounded": "MuiPaper-rounded-11",
+                  "shadow0": "MuiPaper-shadow0-12",
+                  "shadow1": "MuiPaper-shadow1-13",
+                  "shadow10": "MuiPaper-shadow10-22",
+                  "shadow11": "MuiPaper-shadow11-23",
+                  "shadow12": "MuiPaper-shadow12-24",
+                  "shadow13": "MuiPaper-shadow13-25",
+                  "shadow14": "MuiPaper-shadow14-26",
+                  "shadow15": "MuiPaper-shadow15-27",
+                  "shadow16": "MuiPaper-shadow16-28",
+                  "shadow17": "MuiPaper-shadow17-29",
+                  "shadow18": "MuiPaper-shadow18-30",
+                  "shadow19": "MuiPaper-shadow19-31",
+                  "shadow2": "MuiPaper-shadow2-14",
+                  "shadow20": "MuiPaper-shadow20-32",
+                  "shadow21": "MuiPaper-shadow21-33",
+                  "shadow22": "MuiPaper-shadow22-34",
+                  "shadow23": "MuiPaper-shadow23-35",
+                  "shadow24": "MuiPaper-shadow24-36",
+                  "shadow3": "MuiPaper-shadow3-15",
+                  "shadow4": "MuiPaper-shadow4-16",
+                  "shadow5": "MuiPaper-shadow5-17",
+                  "shadow6": "MuiPaper-shadow6-18",
+                  "shadow7": "MuiPaper-shadow7-19",
+                  "shadow8": "MuiPaper-shadow8-20",
+                  "shadow9": "MuiPaper-shadow9-21",
+                }
+              }
+              component="div"
+              elevation={2}
+              square={false}
+              style={
+                Object {
+                  "marginTop": 12,
+                }
+              }
+            >
+              <div
+                className="MuiPaper-root-10 MuiPaper-shadow2-14 MuiPaper-rounded-11"
+                style={
+                  Object {
+                    "marginTop": 12,
+                  }
+                }
+              >
+                <WithStyles(CardHeader)
+                  action={
+                    <mock-material-ui-IconButton
+                      onClick={[Function]}
+                    >
+                      <mock-material-ui-icons-Delete />
+                    </mock-material-ui-IconButton>
+                  }
+                  avatar={
+                    <mock-material-ui-Avatar
+                      style={
+                        Object {
+                          "backgroundColor": "#448206",
+                        }
+                      }
+                    >
+                      C
+                    </mock-material-ui-Avatar>
+                  }
+                  subheader="Thu Jan 01 1970 08:02:03 GMT+0800 (CST)"
+                  title="content"
+                >
+                  <CardHeader
+                    action={
+                      <mock-material-ui-IconButton
+                        onClick={[Function]}
+                      >
+                        <mock-material-ui-icons-Delete />
+                      </mock-material-ui-IconButton>
+                    }
+                    avatar={
+                      <mock-material-ui-Avatar
+                        style={
+                          Object {
+                            "backgroundColor": "#448206",
+                          }
+                        }
+                      >
+                        C
+                      </mock-material-ui-Avatar>
+                    }
+                    classes={
+                      Object {
+                        "action": "MuiCardHeader-action-39",
+                        "avatar": "MuiCardHeader-avatar-38",
+                        "content": "MuiCardHeader-content-40",
+                        "root": "MuiCardHeader-root-37",
+                        "subheader": "MuiCardHeader-subheader-42",
+                        "title": "MuiCardHeader-title-41",
+                      }
+                    }
+                    component="div"
+                    subheader="Thu Jan 01 1970 08:02:03 GMT+0800 (CST)"
+                    title="content"
+                  >
+                    <div
+                      className="MuiCardHeader-root-37"
+                    >
+                      <div
+                        className="MuiCardHeader-avatar-38"
+                      >
+                        <mock-material-ui-Avatar
+                          style={
+                            Object {
+                              "backgroundColor": "#448206",
+                            }
+                          }
+                        >
+                          C
+                        </mock-material-ui-Avatar>
+                      </div>
+                      <div
+                        className="MuiCardHeader-content-40"
+                      >
+                        <WithStyles(Typography)
+                          className="MuiCardHeader-title-41"
+                          component="span"
+                          variant="body2"
+                        >
+                          <Typography
+                            align="inherit"
+                            className="MuiCardHeader-title-41"
+                            classes={
+                              Object {
+                                "alignCenter": "MuiTypography-alignCenter-56",
+                                "alignJustify": "MuiTypography-alignJustify-58",
+                                "alignLeft": "MuiTypography-alignLeft-55",
+                                "alignRight": "MuiTypography-alignRight-57",
+                                "body1": "MuiTypography-body1-52",
+                                "body2": "MuiTypography-body2-51",
+                                "button": "MuiTypography-button-54",
+                                "caption": "MuiTypography-caption-53",
+                                "colorError": "MuiTypography-colorError-66",
+                                "colorInherit": "MuiTypography-colorInherit-62",
+                                "colorPrimary": "MuiTypography-colorPrimary-63",
+                                "colorSecondary": "MuiTypography-colorSecondary-64",
+                                "colorTextSecondary": "MuiTypography-colorTextSecondary-65",
+                                "display1": "MuiTypography-display1-47",
+                                "display2": "MuiTypography-display2-46",
+                                "display3": "MuiTypography-display3-45",
+                                "display4": "MuiTypography-display4-44",
+                                "gutterBottom": "MuiTypography-gutterBottom-60",
+                                "headline": "MuiTypography-headline-48",
+                                "noWrap": "MuiTypography-noWrap-59",
+                                "paragraph": "MuiTypography-paragraph-61",
+                                "root": "MuiTypography-root-43",
+                                "subheading": "MuiTypography-subheading-50",
+                                "title": "MuiTypography-title-49",
+                              }
+                            }
+                            color="default"
+                            component="span"
+                            gutterBottom={false}
+                            headlineMapping={
+                              Object {
+                                "body1": "p",
+                                "body2": "aside",
+                                "display1": "h1",
+                                "display2": "h1",
+                                "display3": "h1",
+                                "display4": "h1",
+                                "headline": "h1",
+                                "subheading": "h3",
+                                "title": "h2",
+                              }
+                            }
+                            noWrap={false}
+                            paragraph={false}
+                            variant="body2"
+                          >
+                            <span
+                              className="MuiTypography-root-43 MuiTypography-body2-51 MuiCardHeader-title-41"
+                            >
+                              content
+                            </span>
+                          </Typography>
+                        </WithStyles(Typography)>
+                        <WithStyles(Typography)
+                          className="MuiCardHeader-subheader-42"
+                          color="textSecondary"
+                          component="span"
+                          variant="body2"
+                        >
+                          <Typography
+                            align="inherit"
+                            className="MuiCardHeader-subheader-42"
+                            classes={
+                              Object {
+                                "alignCenter": "MuiTypography-alignCenter-56",
+                                "alignJustify": "MuiTypography-alignJustify-58",
+                                "alignLeft": "MuiTypography-alignLeft-55",
+                                "alignRight": "MuiTypography-alignRight-57",
+                                "body1": "MuiTypography-body1-52",
+                                "body2": "MuiTypography-body2-51",
+                                "button": "MuiTypography-button-54",
+                                "caption": "MuiTypography-caption-53",
+                                "colorError": "MuiTypography-colorError-66",
+                                "colorInherit": "MuiTypography-colorInherit-62",
+                                "colorPrimary": "MuiTypography-colorPrimary-63",
+                                "colorSecondary": "MuiTypography-colorSecondary-64",
+                                "colorTextSecondary": "MuiTypography-colorTextSecondary-65",
+                                "display1": "MuiTypography-display1-47",
+                                "display2": "MuiTypography-display2-46",
+                                "display3": "MuiTypography-display3-45",
+                                "display4": "MuiTypography-display4-44",
+                                "gutterBottom": "MuiTypography-gutterBottom-60",
+                                "headline": "MuiTypography-headline-48",
+                                "noWrap": "MuiTypography-noWrap-59",
+                                "paragraph": "MuiTypography-paragraph-61",
+                                "root": "MuiTypography-root-43",
+                                "subheading": "MuiTypography-subheading-50",
+                                "title": "MuiTypography-title-49",
+                              }
+                            }
+                            color="textSecondary"
+                            component="span"
+                            gutterBottom={false}
+                            headlineMapping={
+                              Object {
+                                "body1": "p",
+                                "body2": "aside",
+                                "display1": "h1",
+                                "display2": "h1",
+                                "display3": "h1",
+                                "display4": "h1",
+                                "headline": "h1",
+                                "subheading": "h3",
+                                "title": "h2",
+                              }
+                            }
+                            noWrap={false}
+                            paragraph={false}
+                            variant="body2"
+                          >
+                            <span
+                              className="MuiTypography-root-43 MuiTypography-body2-51 MuiTypography-colorTextSecondary-65 MuiCardHeader-subheader-42"
+                            >
+                              Thu Jan 01 1970 08:02:03 GMT+0800 (CST)
+                            </span>
+                          </Typography>
+                        </WithStyles(Typography)>
+                      </div>
+                      <div
+                        className="MuiCardHeader-action-39"
+                      >
+                        <mock-material-ui-IconButton
+                          onClick={[Function]}
+                        >
+                          <mock-material-ui-icons-Delete />
+                        </mock-material-ui-IconButton>
+                      </div>
+                    </div>
+                  </CardHeader>
+                </WithStyles(CardHeader)>
+                <ImageDropzone
+                  images={
+                    Array [
+                      Object {
+                        "imageId": 1,
+                        "url": "image/url/1",
+                      },
+                    ]
+                  }
+                  onChange={[Function]}
+                  onDelete={[Function]}
+                  taskId={1}
+                >
+                  <mock-react-dnd-dropzone
+                    onDrop={[Function]}
+                    render={[Function]}
+                  />
+                </ImageDropzone>
+              </div>
+            </Paper>
+          </WithStyles(Paper)>
+        </Card>
+      </TaskItem>
+    </mock-rc-queue-anim>
+  </TaskList>
+  <AddButton
+    onClick={[Function]}
+  >
+    <mock-material-ui-Button
+      color="secondary"
+      onClick={[Function]}
+      style={
+        Object {
+          "bottom": 24,
+          "position": "fixed",
+          "right": 24,
+        }
+      }
+      variant="fab"
+    >
+      <mock-material-ui-icons-Add />
+    </mock-material-ui-Button>
+  </AddButton>
+  <CreateFormDialog
+    isOpen={false}
+    onClose={[Function]}
+    onSubmit={[Function]}
+  >
+    <WithStyles(Dialog)
+      aria-labelledby="form-dialog-title"
+      onClose={[Function]}
+      onKeyPress={[Function]}
+      open={false}
+    >
+      <Dialog
+        aria-labelledby="form-dialog-title"
+        classes={
+          Object {
+            "fullScreen": "MuiDialog-fullScreen-7",
+            "fullWidth": "MuiDialog-fullWidth-6",
+            "paper": "MuiDialog-paper-2",
+            "paperWidthMd": "MuiDialog-paperWidthMd-5",
+            "paperWidthSm": "MuiDialog-paperWidthSm-4",
+            "paperWidthXs": "MuiDialog-paperWidthXs-3",
+            "root": "MuiDialog-root-1",
+          }
+        }
+        disableBackdropClick={false}
+        disableEscapeKeyDown={false}
+        fullScreen={false}
+        fullWidth={false}
+        maxWidth="sm"
+        onClose={[Function]}
+        onKeyPress={[Function]}
+        open={false}
+        transition={[Function]}
+        transitionDuration={
+          Object {
+            "enter": 225,
+            "exit": 195,
+          }
+        }
+      >
+        <WithStyles(Modal)
+          BackdropProps={
+            Object {
+              "transitionDuration": Object {
+                "enter": 225,
+                "exit": 195,
+              },
+            }
+          }
+          aria-labelledby="form-dialog-title"
+          className="MuiDialog-root-1"
+          disableBackdropClick={false}
+          disableEscapeKeyDown={false}
+          onClose={[Function]}
+          onKeyPress={[Function]}
+          open={false}
+          role="dialog"
+        >
+          <Modal
+            BackdropComponent={[Function]}
+            BackdropProps={
+              Object {
+                "transitionDuration": Object {
+                  "enter": 225,
+                  "exit": 195,
+                },
+              }
+            }
+            aria-labelledby="form-dialog-title"
+            className="MuiDialog-root-1"
+            classes={
+              Object {
+                "hidden": "MuiModal-hidden-9",
+                "root": "MuiModal-root-8",
+              }
+            }
+            disableAutoFocus={false}
+            disableBackdropClick={false}
+            disableEnforceFocus={false}
+            disableEscapeKeyDown={false}
+            disableRestoreFocus={false}
+            hideBackdrop={false}
+            keepMounted={false}
+            manager={
+              ModalManager {
+                "add": [Function],
+                "containers": Array [],
+                "data": Array [],
+                "handleContainerOverflow": true,
+                "hideSiblingNodes": true,
+                "isTopModal": [Function],
+                "modals": Array [],
+                "remove": [Function],
+              }
+            }
+            onClose={[Function]}
+            onKeyPress={[Function]}
+            open={false}
+            role="dialog"
+          />
+        </WithStyles(Modal)>
+      </Dialog>
+    </WithStyles(Dialog)>
+  </CreateFormDialog>
+</PureApp>
+`;
+
+exports[`should render <PureApp> without tasks 1`] = `
+<PureApp
+  closeDialog={[Function]}
+  isDialogOpen={false}
+  openDialog={[Function]}
+  setLoading={[Function]}
+  setTasks={[Function]}
+  tasks={Array []}
+>
+  <Header>
+    <mock-material-ui-AppBar
+      position="sticky"
+    >
+      <mock-material-ui-Toolbar>
+        Task Management
+      </mock-material-ui-Toolbar>
+    </mock-material-ui-AppBar>
+  </Header>
+  <TaskList
+    onDelete={[Function]}
+    onImageChange={[Function]}
+    onImageDelete={[Function]}
+    tasks={Array []}
+  >
+    <mock-rc-queue-anim
+      style={
+        Object {
+          "padding": 16,
+        }
+      }
+    />
+  </TaskList>
+  <AddButton
+    onClick={[Function]}
+  >
+    <mock-material-ui-Button
+      color="secondary"
+      onClick={[Function]}
+      style={
+        Object {
+          "bottom": 24,
+          "position": "fixed",
+          "right": 24,
+        }
+      }
+      variant="fab"
+    >
+      <mock-material-ui-icons-Add />
+    </mock-material-ui-Button>
+  </AddButton>
+  <CreateFormDialog
+    isOpen={false}
+    onClose={[Function]}
+    onSubmit={[Function]}
+  >
+    <WithStyles(Dialog)
+      aria-labelledby="form-dialog-title"
+      onClose={[Function]}
+      onKeyPress={[Function]}
+      open={false}
+    >
+      <Dialog
+        aria-labelledby="form-dialog-title"
+        classes={
+          Object {
+            "fullScreen": "MuiDialog-fullScreen-7",
+            "fullWidth": "MuiDialog-fullWidth-6",
+            "paper": "MuiDialog-paper-2",
+            "paperWidthMd": "MuiDialog-paperWidthMd-5",
+            "paperWidthSm": "MuiDialog-paperWidthSm-4",
+            "paperWidthXs": "MuiDialog-paperWidthXs-3",
+            "root": "MuiDialog-root-1",
+          }
+        }
+        disableBackdropClick={false}
+        disableEscapeKeyDown={false}
+        fullScreen={false}
+        fullWidth={false}
+        maxWidth="sm"
+        onClose={[Function]}
+        onKeyPress={[Function]}
+        open={false}
+        transition={[Function]}
+        transitionDuration={
+          Object {
+            "enter": 225,
+            "exit": 195,
+          }
+        }
+      >
+        <WithStyles(Modal)
+          BackdropProps={
+            Object {
+              "transitionDuration": Object {
+                "enter": 225,
+                "exit": 195,
+              },
+            }
+          }
+          aria-labelledby="form-dialog-title"
+          className="MuiDialog-root-1"
+          disableBackdropClick={false}
+          disableEscapeKeyDown={false}
+          onClose={[Function]}
+          onKeyPress={[Function]}
+          open={false}
+          role="dialog"
+        >
+          <Modal
+            BackdropComponent={[Function]}
+            BackdropProps={
+              Object {
+                "transitionDuration": Object {
+                  "enter": 225,
+                  "exit": 195,
+                },
+              }
+            }
+            aria-labelledby="form-dialog-title"
+            className="MuiDialog-root-1"
+            classes={
+              Object {
+                "hidden": "MuiModal-hidden-9",
+                "root": "MuiModal-root-8",
+              }
+            }
+            disableAutoFocus={false}
+            disableBackdropClick={false}
+            disableEnforceFocus={false}
+            disableEscapeKeyDown={false}
+            disableRestoreFocus={false}
+            hideBackdrop={false}
+            keepMounted={false}
+            manager={
+              ModalManager {
+                "add": [Function],
+                "containers": Array [],
+                "data": Array [],
+                "handleContainerOverflow": true,
+                "hideSiblingNodes": true,
+                "isTopModal": [Function],
+                "modals": Array [],
+                "remove": [Function],
+              }
+            }
+            onClose={[Function]}
+            onKeyPress={[Function]}
+            open={false}
+            role="dialog"
+          />
+        </WithStyles(Modal)>
+      </Dialog>
+    </WithStyles(Dialog)>
+  </CreateFormDialog>
+</PureApp>
+`;

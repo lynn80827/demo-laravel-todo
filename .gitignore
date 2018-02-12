@@ -14,3 +14,4 @@ yarn-error.log
 # f2e
 f2e/node_modules
 f2e/build
+f2e/coverage
