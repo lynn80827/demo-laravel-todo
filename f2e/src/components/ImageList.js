@@ -18,7 +18,7 @@ const ImageList = ({
       taskId={taskId}
       image={{ imageId, url }}
       onDelete={onDelete}
-      style={{ marginRight: 8 }}
+      style={{ overflow: 'hidden' }}
     />
   ));
 
