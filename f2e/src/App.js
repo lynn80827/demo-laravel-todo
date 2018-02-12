@@ -1,4 +1,3 @@
-/* eslint react/no-did-mount-set-state: 0 */
 // @flow
 import * as React from 'react';
 import { compose } from 'recompose';
